@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نبض | خانه</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/font.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/css/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <nav class="container mb-4">
+        <div class="row text-center mt-3 justify-content-between">
+            <div class="col"><button class="header-btn btn rounded-5 border-1 border-secondary-subtle p-1"><img
+                        src="public/icons/alert.svg" alt="alert" class="w-100"></button></div>
+            <div class="col"><span class="fs-2">خانه</span></div>
+            <div class="col"><button class="header-btn btn rounded-5 bg-secondary-subtle p-0"><img
+                        src="public/images/user.png" alt="user" class="w-100 rounded-circle"></button></div>
+        </div>
+    </nav>
+    <!-- Card -->
+    <div class="swiper container mb-5">
+        <div class="swiper-pagination"></div>
+        <div class="swiper-wrapper" id="home_card_list"></div>
+    </div>
+    <!-- Action button -->
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-3 d-flex flex-column align-items-center text-center"><button class="btn action-btn mb-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#ab-charge"><img src="public/icons/plus.svg" alt="icon"></button><span>شارژ کردن</span></div>
+            <div class="col-3 d-flex flex-column align-items-center text-center"><button class="btn action-btn mb-2"><img src="public/icons/exchange.svg" alt="icon"></button><span>تبدیل</span></div>
+            <div class="col-3 d-flex flex-column align-items-center text-center"><button class="btn action-btn mb-2"><img src="public/icons/transfer.svg" alt="icon"></button><span>انتقال</span></div>
+            <div class="col-3 d-flex flex-column align-items-center text-center"><button class="btn action-btn mb-2"><img src="public/icons/detail.svg" alt="icon"></button><span>جزئیات</span></div>
+        </div>
+    </div>
+    <!-- Action button - Charge card -->
+    <div class="offcanvas offcanvas-bottom rounded-top-5 h-50" tabindex="-1" id="ab-charge">
+        <div class="offcanvas-header d-flex justify-content-between">
+            <h5 class="offcanvas-title fs-2 ff-dana-demibold">شارژ کردن</h5>
+            <button type="button" class="btn-close m-0" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <form>
+            <div class="offcanvas-body d-flex flex-column align-items-center">
+                <div class="admin-addcard-input-div w-75 mx-auto mb-4 position-relative">
+                    <input type="number" name="ab-charge" id="AbCharge"
+                        class="w-100 border-0 border-bottom border-2 py-1 bg-transparent" inputmode="numeric" required>
+                    <label for="ab-charge" class="label position-absolute top-0 start-0 text-secondary">شارژ کردن
+                        کارت</label>
+                    <div class="underline position-absolute bottom-0 end-0 w-100 bg-secondary"></div>
+                </div>
+                <button type="submit" class="btn admin-action-btn w-75 mb-1 text-white mt-2" onclick="ab_charge()"> شارژ
+                    کردن</button>
+            </div>
+        </form>
+    </div>
+    <!-- Transaction -->
+    <div class="container pt-3 transaction">
+        <div class="d-flex px-2 flex-nowrap justify-content-between">
+            <span class="fs-4 ff-dana-demibold">معامله ها</span>
+            <a href="#" class="text-black">نمایش همه</a>
+        </div>
+        <div class="row flex-column align-items-center transaction-item">
+            <div class="col-12 d-flex align-items-center">
+                <div class="col-2 p-2"><img src="public/images/user.png" alt="user" class="w-100 rounded-circle"></div>
+                <div class="col-7 p-2 d-flex flex-column">
+                    <span class="ff-dana-demibold">شارژ کردن پول</span>
+                    <span class="ff-dana-light">۳ مرداد ۱۴۰۳</span>
+                </div>
+                <div class="col-3 p-2 text-center">۵۰,۰۰۰ ريال</div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <div class="container border-top border-1 py-3 bg-white position-fixed bottom-0 start-50 translate-middle-x z-1">
+        <div class="row">
+            <div class="col-3 d-flex flex-column align-items-center navbar-item"><a href="home.html"
+                    class="btn mb-2 p-0 border-0"><img src="public/icons/home-solid.svg" alt="icon"></a><span
+                    class="ff-dana-demibold">خانه</span></div>
+            <div class="col-3 d-flex flex-column align-items-center navbar-item"><a href="#"
+                    class="btn mb-2 p-0 border-0"><img src="public/icons/transaction.svg" alt="icon"></a><span>معامله
+                    ها</span></div>
+            <div class="col-3 d-flex flex-column align-items-center navbar-item"><a href="#"
+                    class="btn mb-2 p-0 border-0"><img src="public/icons/chart-bar.svg" alt="icon"></a><span>گزارش
+                    ها</span></div>
+            <div class="col-3 d-flex flex-column align-items-center navbar-item"><a href="admin.html"
+                    class="btn mb-2 p-0 border-0"><img src="public/icons/squares.svg" alt="icon"></a><span>مدیریت</span>
+            </div>
+        </div>
+    </div>
+    <script src="assets/vendor/toastify-js/js/toastify-js.js"></script>
+    <script src="assets/vendor/swiper/js/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

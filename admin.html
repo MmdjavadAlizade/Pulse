@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fa">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>نبض | مدیریت</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/font.css">
+        <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/vendor/toastify-js/css/toastify.min.css">
+    </head>
+    <body>
+        <!-- Header -->
+        <nav class="container mb-4">
+            <div class="row text-center mt-3 justify-content-between">
+                <div class="col"><button class="header-btn btn rounded-5 border-1 border-secondary-subtle p-1"><img src="public/icons/alert.svg" alt="alert" class="w-100"></button></div>
+                <div class="col"><span class="fs-2">مدیریت</span></div>
+                <div class="col"><button class="header-btn btn rounded-5 bg-secondary-subtle p-0"><img src="public/images/user.png" alt="user" class="w-100 rounded-circle"></button></div>
+            </div>
+        </nav>
+        <!-- Card list -->
+        <div class="table-responsive">
+            <table class="table table-striped text-center admin-cardlist-table">
+                <thead>
+                    <tr>
+                        <th>بانک</th>
+                        <th>شماره کارت</th>
+                        <th>نام و نام خانوادگی</th>
+                        <th>موجودی به ریال</th>
+                        <th>فعالیت<button type="button" class="me-2 btn border-0 p-0 text-green-800" data-bs-toggle="modal" data-bs-target="#addcard">+</button></th>
+                    </tr>
+                </thead>
+                <tbody id="admin_card_list"></tbody>
+            </table>
+        </div>
+        <!-- Add card modal -->
+        <div class="modal fade" id="addcard" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                  <p class="modal-title fs-5 ff-dana-bold">اضافه کردن کارت</p>
+                </div>
+                <div class="modal-body">
+                    <form class="d-flex flex-column align-items-center mt-3" id="addcard-form">
+                        <div class="admin-addcard-input-div w-75 mx-auto mb-4 position-relative">
+                            <input type="number" name="addcard_cardnumber" id="addcard_cardnumber" class="w-100 border-0 border-bottom border-2 py-1 bg-transparent" inputmode="numeric" required>
+                            <label for="addcard_cardnumber" class="label position-absolute top-0 start-0 text-secondary">شماره کارت</label>
+                            <div class="underline position-absolute bottom-0 end-0 w-100 bg-secondary"></div>
+                        </div>
+                        <div class="admin-addcard-input-div w-75 mx-auto mb-4 position-relative">
+                            <input type="text" name="addcard_name" id="addcard_name" class="w-100 border-0 border-bottom border-2 py-1 bg-transparent" required>
+                            <label for="addcard_name" class="label position-absolute top-0 start-0 text-secondary">نام و نام خانوادگی</label>
+                            <div class="underline position-absolute bottom-0 end-0 w-100 bg-secondary"></div>
+                        </div>
+                        <div class="admin-addcard-input-div w-75 mx-auto mb-4 position-relative">
+                            <input type="number" name="addcard_balance" id="addcard_balance" class="w-100 border-0 border-bottom border-2 py-1 bg-transparent" inputmode="numeric" required>
+                            <label for="addcard_balance" class="label position-absolute top-0 start-0 text-secondary">موجودی (به ریال)</label>
+                            <div class="underline position-absolute bottom-0 end-0 w-100 bg-secondary"></div>
+                        </div>
+                        <button type="submit" class="btn admin-action-btn w-100 mb-1 text-white" onclick="addcard()">اضافه کردن کارت</button>
+                    </form>
+                    <button type="button" class="btn admin-action-btn w-100 text-white" data-bs-dismiss="modal">لغو</button>
+                </div>
+              </div>
+            </div>
+        a</div>
+        <!-- Navbar -->
+        <div class="container border-top border-1 py-3 bg-white position-fixed bottom-0 start-50 translate-middle-x">
+            <div class="row">
+                <div class="col-3 d-flex flex-column align-items-center navbar-item"><a href="home.html" class="btn mb-2 p-0 border-0"><img src="public/icons/home.svg" alt="icon"></a><span>خانه</span></div>
+                <div class="col-3 d-flex flex-column align-items-center navbar-item"><a href="#" class="btn mb-2 p-0 border-0"><img src="public/icons/transaction.svg" alt="icon"></a><span>معامله ها</span></div>
+                <div class="col-3 d-flex flex-column align-items-center navbar-item"><a href="#" class="btn mb-2 p-0 border-0"><img src="public/icons/chart-bar.svg" alt="icon"></a><span>گزارش ها</span></div>
+                <div class="col-3 d-flex flex-column align-items-center navbar-item"><a href="admin.html" class="btn mb-2 p-0 border-0"><img src="public/icons/squares-solid.svg" alt="icon"></a><span class="ff-dana-demibold">مدیریت</span></div>
+            </div>
+        </div>
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/toastify-js/js/toastify-js.js"></script>
+        <script src="assets/vendor/sweetalert/js/sweetalert2@11.js"></script>
+        <script src="assets/js/script.js"></script>
+        <script>
+            (() => {
+                'use strict'
+
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                const forms = document.querySelectorAll('.needs-validation')
+
+                // Loop over them and prevent submission
+                Array.from(forms).forEach(form => {
+                    form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                    }, false)
+                })
+            })()
+        </script>
+    </body>
+</html>

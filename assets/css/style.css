@@ -1,0 +1,204 @@
+*{
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-dana-regular);
+    user-select: none;
+}
+
+:root{
+    --index-header-text: #9199a6;
+    --index-description-text: #c3c9d5;
+    --bg-color-1: #454d5a;
+    --bg-color-2: #111828;
+    --card-bg-color-1: #171f30;
+    --card-bg-color-2: #454d5a;
+    --card-list-active-bg: #1e2a38;
+    --card-text-color: #ffffff;
+    --btn-dark-blue-bg: #1e2a38;
+    --transaction-border-color: #f6f7f9;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+/*=-=-=-=-=-=-={ Index }=-=-=-=-=-=-=*/
+
+/* Body */
+.index-body{
+    height: 100vh;
+    background: linear-gradient(145deg, var(--bg-color-1), var(--bg-color-2));
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.index-body .row{
+    height: 100vh;
+}
+.index-header h1{
+    font-size: 100px;
+    color: var(--index-header-text);
+}
+.index-textbox img{
+    max-width: 40%;
+}
+.index-textbox-description{
+    color: var(--index-description-text);
+}
+
+
+/*=-=-=-=-=-=-={ Home }=-=-=-=-=-=-=*/
+
+/* Header */
+.header-btn{
+    width: 35px;
+    max-width: 35px;
+    aspect-ratio: 1;
+}
+
+/* Card */
+.bank-card{
+    height: 200px;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: var(--card-bg-color-1);
+    border-radius: 15px;
+    color: var(--card-text-color);
+}
+.bank-card-melliiran{
+    background-image: url(../../public/images/card-melliiran-wave.svg);
+}
+.bank-card-blubank{
+    background-image: url(../../public/images/card-blubank-wave.svg);
+}
+.bank-card-mellat{
+    background-image: url(../../public/images/card-mellat-wave.svg);
+}
+.bank-card-refah{
+    background-image: url(../../public/images/card-refah-wave.svg);
+}
+.bank-add-card{
+    border: 2px dashed var(--card-bg-color-1);
+    border-radius: 15px;
+    color: var(--card-text-color);
+    height: 200px;
+    width: 300px;
+}
+.bank-add-imgbox{
+    width: 70px;
+    aspect-ratio: 1;
+    background-color: var(--bg-color-2);
+}
+.bank-card-textbox{
+    top: 130px;
+}
+.bank-card img{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 50px;
+}
+.swiper-pagination{
+    bottom: -5px !important;
+}
+.swiper-pagination-bullet-active{
+    background-color: var(--card-list-active-bg) !important;
+}
+.home-input-div input,select {
+    outline: none;
+}
+.home-input-div .label {
+    right: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+.home-input-div input:focus~.label,
+.home-input-div input:valid~.label {
+    top: -20px !important;
+    font-size: 16px;
+}
+.home-input-div .underline {
+    height: 2px;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+.home-input-div input:focus~.underline,
+.home-input-div input:valid~.underline,
+.home-input-div select:has(option[value=""]:not(:checked))~.underline {
+    transform: scaleX(1);
+}
+/* Action button */
+.action-btn{
+    width: 50px;
+    max-width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50% !important;
+    background-color: var(--btn-dark-blue-bg) !important;
+}
+
+/* Transaction */
+.transaction{
+    margin-bottom: 80px;
+    border-top: 4px solid var(--transaction-border-color);
+}
+.transaction-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Navbar */
+.navbar-item img{
+    width: 25px;
+}
+.navbar-item span{
+    font-size: 13px;
+}
+
+/*=-=-=-=-=-=-={ Admin }=-=-=-=-=-=-=*/
+.admin-action-btn{
+    transition: 0.3s;
+    background-color: var(--btn-dark-blue-bg) !important;
+    border: 1px solid var(--btn-dark-blue-bg) !important;
+}
+.admin-action-btn:hover{
+    transition: 0.3s;
+    background: none !important;
+    color: var(--btn-dark-blue-bg) !important;
+}
+.admin-action-btn:active{
+    transition: 0.3s;
+    transform: scale(1.01);
+}
+.admin-cardlist-table th{
+    min-width: 165px !important;
+}
+.admin-addcard-input-div input,select {
+    outline: none;
+}
+.admin-addcard-input-div .label {
+    right: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+.admin-addcard-input-div input:focus~.label,
+.admin-addcard-input-div input:valid~.label {
+    top: -20px !important;
+    font-size: 16px;
+}
+.admin-addcard-input-div .underline {
+    height: 2px;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+.admin-addcard-input-div input:focus~.underline,
+.admin-addcard-input-div input:valid~.underline,
+.admin-addcard-input-div select:has(option[value=""]:not(:checked))~.underline {
+    transform: scaleX(1);
+}
